@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Food Website</title>
+       <link rel="stylesheet" href="{% static 'css/index.css' %}">
+   </head>
+   <body>
+           
+       <h1>Welcome to Our Food Website</h1>
+       {% for food_item in food_items %}
+           <div>
+               <h2>{{ food_item.id}}</h2>
+               <h2>{{ food_item.name }}</h2>
+               <p>{{ food_item.description }}</p>
+               <p>Price: ${{ food_item.price }}</p>
+               <img src="{{ food_item.image.url }}" alt="{{ food_item.name }}">
+               <a href="{% url 'add_to_cart'  food_item.id %}">Add to Cart</a>
+           </div>
+       {% endfor %}
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>The vegan veges</h2>
+        <p>A mix of fruits and vegetables</p>
+        <p>Price: $20</p>
+        <img src="{% static 'media/images/vegan food.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 1 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>Buger</h2>
+        <p>You already know bugger!!!</p>
+        <p>Price: $10</p>
+        <img src="{% static 'media/images/bugger.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 2 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>Choma</h2>
+        <p>CHoma steak and ribs</p>
+        <p>Price: $70</p>
+        <img src="{% static 'media/images/choma.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 3 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>pizza</h2>
+        <p>no need to desribe</p>
+        <p>Price: $40</p>
+        <img src="{% static 'media/images/pizza.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 4 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+
+       <h1>Drinks</h1>
+       <div>
+        <h2>Villeria</h2>
+        <p>Spirit</p>
+        <p>Price: $60</p>
+        <img src="{% static 'media/images/1.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 5 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>Champgne</h2>
+        <p>40% spirit</p>
+        <p>Price: $70</p>
+        <img src="{% static 'media/images/4.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 6 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>Hampton Drum</h2>
+        <p>For Bussines deals</p>
+        <p>Price: $40</p>
+        <img src="{% static 'media/images/2.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 8 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+       <div>
+        <h2>White Cap</h2>
+        <p>For Hiking</p>
+        <p>Price: $10</p>
+        <img src="{% static 'media/images/3.jpg' %}" alt="1">
+        <a href="{% url 'add_to_cart' 7 %}">Add to cart</a>
+       </div>
+       <a href="{% url 'cart.html' %}">View Cart</a>
+
+       <div class="foot">
+        <ul>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="cart">Cart</a></li>
+            <li><a href="logout">Logout</a></li>
+            
+        </ul>
+       </div>
+       
+   </body>
+   </html>

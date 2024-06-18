@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <a href="signup">Register</a>
+
+    <div>
+        <style>
+            h5{
+                color: red;
+            }
+        </style>
+          {% for message in messages %}
+          <h5>{{message}}</h5>
+          {% endfor %}
+
+       </div>
+
+    <div class="form">
+    <form action="" method="POST"> 
+        {% csrf_token %}
+
+        <h1 class="form_tittle">Login Form</h1>
+    <div class="details">
+        <h2>Usename:</h2>
+        <input type="text" placeholder="username" id="username" name="username" required>
+    </div>
+    <div class="details">
+        <h2>Password</h2>
+        <input type="password" placeholder="password" id="password" name="password">
+    </div>
+    <div class="button">
+        <button type="submit" class="btn" >Login</button>
+    </div> 
+    </form>
+    
+    <div class="check">
+        <div class="checkbox">
+            <input type="checkbox" id="chekcbox1" checked>
+            <label for="chekcbox1"><span class="checkbox-icon"></span>Remember Me</label>
+        </div>
+        <a href="#"> Forgot Your Password? </a>
+    </div>
+    <div class="sign">
+        <p class="text-base"> Not registered? <a href="/signup" class=""> Create a account </a></p>
+    </div>
+    <div class="footer">
+            <div class="foot">
+                <a href="#"> About</a>
+                <a href="#"> Help</a>
+                <a href="#"> Terms</a>
+                <a href="#"> Privacy</a>
+            </div>
+            <p class="capitalize"> © copyright 2024 by FErdiTIng</p>
+        </div>
+    
+</body>
+</html>
